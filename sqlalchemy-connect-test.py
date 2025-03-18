@@ -6,7 +6,7 @@ load_dotenv()
 MYSQL_USER = getenv('MYSQL_USER')
 MYSQL_PSWD = getenv('MYSQL_PSWD')
 MYSQL_IP = getenv('MYSQL_IP')
-engine = create_engine(f"mysql+mysqlconnector://{MYSQL_USER}:{MYSQL_PSWD}@{MYSQL_IP}")
+engine = create_engine(f"mysql+mysqlconnector://{MYSQL_USER}:{MYSQL_PSWD}@{MYSQL_IP}", echo=True)
 
 connection = engine.connect()
 query = text("SELECT * FROM employees.employees LIMIT 10")
